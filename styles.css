@@ -1,0 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Allerta&display=swap');
+
+body{
+    margin: 0;
+    padding: 0;
+    background-color: blue;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: "Allerta", sans-serif;
+}
+
+#game-board{
+    display: flex;
+}
