@@ -7,23 +7,58 @@ const jeopardyCategories = [
         clues: [
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "100"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "200"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "300"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "400"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "500"
+            }
+        ]
+    },
+    {
+        categoryName: "ALSO A GREEK LETTER",
+        clues: [
+            {
+                clue: "lorem",
+                answer: "ipsum",
+                points: "100"
+            },
+            {
+                clue: "lorem",
+                answer: "ipsum",
+                points: "200"
+            },
+            {
+                clue: "lorem",
+                answer: "ipsum",
+                points: "300"
+            },
+            {
+                clue: "lorem",
+                answer: "ipsum",
+                points: "400"
+            },
+            {
+                clue: "lorem",
+                answer: "ipsum",
+                points: "500"
             }
         ]
     },
@@ -32,23 +67,28 @@ const jeopardyCategories = [
         clues: [
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "100"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "200"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "300"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "400"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "500"
             }
         ]
     },
@@ -57,23 +97,28 @@ const jeopardyCategories = [
         clues: [
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "100"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "200"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "300"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "400"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "500"
             }
         ]
     },
@@ -82,23 +127,28 @@ const jeopardyCategories = [
         clues: [
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "100"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "200"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "300"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "400"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "500"
             }
         ]
     },
@@ -107,48 +157,28 @@ const jeopardyCategories = [
         clues: [
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "100"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "200"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "300"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "400"
             },
             {
                 clue: "lorem",
-                answer: "ipsum"
-            }
-        ]
-    },
-    {
-        categoryName: "TBD",
-        clues: [
-            {
-                clue: "lorem",
-                answer: "ipsum"
-            },
-            {
-                clue: "lorem",
-                answer: "ipsum"
-            },
-            {
-                clue: "lorem",
-                answer: "ipsum"
-            },
-            {
-                clue: "lorem",
-                answer: "ipsum"
-            },
-            {
-                clue: "lorem",
-                answer: "ipsum"
+                answer: "ipsum",
+                points: "500"
             }
         ]
     }
@@ -165,6 +195,21 @@ function addCategory(category) {
     column.appendChild(categoryTitle);
     gameBoard.append(column);
 
+    category.clues.forEach((question) => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        column.appendChild(card);
+
+        card.innerText = question.points;
+        card.setAttribute('clue', question.clue);
+
+        // card.addEventListener('click', flipCard())
+    })
+
 }
 
 jeopardyCategories.forEach(category => addCategory(category));
+
+function flipCard(){
+    this.innerHTML = "";
+}

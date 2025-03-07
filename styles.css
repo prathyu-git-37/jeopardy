@@ -14,4 +14,20 @@ body{
 
 #game-board{
     display: flex;
+    background-color: black;
+}
+
+.card{
+    width: 150px;
+    height: 120px;
+    background-color: darkblue;
+    border-left: dodgerblue 10px solid;
+    border-right: dodgerblue 10px solid;
+    border-top: dodgerblue 10px solid;
+    border-bottom: dodgerblue 10px solid;
+    text-align: center;
+    font-size: xxx-large;
+    margin: 5px;
+    padding: 10px;
+    line-height: 120px;
 }
