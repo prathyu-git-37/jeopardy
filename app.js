@@ -27,7 +27,7 @@ const categories = {
         400: "Who wrote 'Pride and Prejudice'?",
         500: "What is the name of the fictional detective created by Arthur Conan Doyle?"
     },
-    Math: {
+    Mathematics: {
         100: "What is the value of Pi to two decimal places?",
         200: "What is the term for a polygon with eight sides?",
         300: "What is the square root of 64?",
@@ -44,6 +44,58 @@ const categories = {
 };
 
 let selectedQuestion;
+let teamScores = [];
+let teamNames = [];
+
+document.getElementById('startButton').onclick = function() {
+    const teamCount = parseInt(document.getElementById('teamCount').value);
+    if (teamCount >= 2 && teamCount <= 6) {
+        document.getElementById('teamInputArea').classList.add('hidden');
+        document.getElementById('teamNamesArea').classList.remove('hidden');
+        createTeamInputs(teamCount);
+    } else {
+        alert("Please enter a number between 2 and 6.");
+    }
+};
+
+function createTeamInputs(count) {
+    const teamInputsDiv = document.getElementById('teamInputs');
+    teamInputsDiv.innerHTML = ''; // Clear existing inputs
+    for (let i = 1; i <= count; i++) {
+        const input = document.createElement('input');
+        input.placeholder = `Team ${i} Name`;
+        input.id = `team${i}`;
+        teamInputsDiv.appendChild(input);
+    }
+}
+
+document.getElementById('submitTeamsButton').onclick = function() {
+    const teamCount = document.getElementById('teamCount').value;
+    teamScores = Array(parseInt(teamCount)).fill(0);
+    teamNames = [];
+
+    for (let i = 1; i <= teamCount; i++) {
+        const teamName = document.getElementById(`team${i}`).value;
+        teamNames.push(teamName || `Team ${i}`);
+    }
+
+    displayScores();
+    document.getElementById('teamNamesArea').classList.add('hidden');
+    document.getElementById('scoreDisplay').classList.remove('hidden');
+    document.getElementById('gameBoard').classList.remove('hidden');
+    createGameBoard();
+};
+
+function displayScores() {
+    const scoreDisplay = document.getElementById('scoreDisplay');
+    scoreDisplay.innerHTML = '<h2>Scores</h2>';
+    teamNames.forEach((name, index) => {
+        const scoreDiv = document.createElement('div');
+        scoreDiv.classList.add('score');
+        scoreDiv.innerText = `${name}: ${teamScores[index]}`;
+        scoreDisplay.appendChild(scoreDiv);
+    });
+}
 
 function createGameBoard() {
     const gameBoard = document.getElementById('gameBoard');
