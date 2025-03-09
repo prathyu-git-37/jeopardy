@@ -88,7 +88,7 @@ document.getElementById('submitTeamsButton').onclick = function() {
 
 function displayScores() {
     const scoreDisplay = document.getElementById('scoreDisplay');
-    scoreDisplay.innerHTML = '<h2>Scores</h2>';
+    scoreDisplay.innerHTML = ''; // Clear previous content
     teamNames.forEach((name, index) => {
         const scoreDiv = document.createElement('div');
         scoreDiv.classList.add('score');
