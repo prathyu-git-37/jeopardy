@@ -196,12 +196,14 @@ function selectQuestion(category, points, pointsDiv) {
     document.getElementById('question').innerText = selectedQuestion;
     document.getElementById('gameBoard').style.display = 'none';
     document.getElementById('questionArea').classList.remove('hidden');
+    document.getElementById('backButton').classList.remove('hidden');
 }
 
     document.getElementById('backButton').onclick = function() {
     selectedPoints = 0;
     document.getElementById('gameBoard').style.display = 'grid';
     document.getElementById('questionArea').classList.add('hidden');
+    document.getElementById('backButton').classList.add('hidden');
     document.getElementById('question').innerText = ''; // Clear the question text
 };
 

@@ -10,7 +10,7 @@
 <div class="container">
     <div id="teamInputArea">
         <h2>Enter Number of Teams</h2>
-        <input type="number" id="teamCount" min="2" max="6" value = "3" placeholder="Number of Teams" />
+        <input type="number" id="teamCount" min="2" max="6" value="3" placeholder="Number of Teams" />
         <button id="startButton">Start Game</button>
     </div>
     <div id="teamNamesArea" class="hidden">
@@ -18,14 +18,16 @@
         <div id="teamInputs"></div>
         <button id="submitTeamsButton">Submit Team Names</button>
     </div>
-    <div id="scoreDisplay" class="hidden"></div>
-    <div id="gameBoard" class="hidden"></div>
+
     <div id="questionArea" class="hidden">
         <h2 id="categoryAndValue"></h2>
         <h1 id="question"></h1>
         <p id="feedback"></p>
-        <button id="backButton">Back to Board</button>
+
     </div>
+    <div id="scoreDisplay" class="hidden"></div>
+    <button id="backButton" class="hidden">Back to Board</button>
+    <div id="gameBoard" class="hidden"></div>
 </div>
 <script src="app.js"></script>
 </body>
