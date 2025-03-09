@@ -92,9 +92,58 @@ function displayScores() {
     teamNames.forEach((name, index) => {
         const scoreDiv = document.createElement('div');
         scoreDiv.classList.add('score');
-        scoreDiv.innerText = `${name}: ${teamScores[index]}`;
+
+        // Create score display
+        const scoreValue = document.createElement('span');
+        scoreValue.id = `score${index}`;
+        scoreValue.innerText = teamScores[index];
+        scoreValue.style.cursor = 'pointer'; // Indicate that it's clickable
+        scoreValue.onclick = () => makeScoreEditable(scoreValue, index); // Make it editable on click
+        scoreDiv.appendChild(scoreValue);
+
+        // Create increment button
+        const incrementButton = document.createElement('button');
+        incrementButton.innerText = '+';
+        incrementButton.onclick = () => updateScore(index, selectedPoints); // Use selected points
+        scoreDiv.appendChild(incrementButton);
+
+        // Create decrement button
+        const decrementButton = document.createElement('button');
+        decrementButton.innerText = '-';
+        decrementButton.onclick = () => updateScore(index, -selectedPoints); // Use negative selected points
+        scoreDiv.appendChild(decrementButton);
+
         scoreDisplay.appendChild(scoreDiv);
     });
+}
+
+function makeScoreEditable(scoreElement, index) {
+    const currentScore = scoreElement.innerText;
+    scoreElement.innerHTML = `<input type="number" value="${currentScore}" id="inputScore${index}" style="width: 50px;" />`;
+
+    const inputField = document.getElementById(`inputScore${index}`);
+    inputField.focus(); // Focus on the input field
+
+    inputField.onblur = () => {
+        const newScore = parseInt(inputField.value);
+        if (!isNaN(newScore)) {
+            teamScores[index] = newScore; // Update team score
+            scoreElement.innerText = newScore; // Update displayed score
+        } else {
+            scoreElement.innerText = currentScore; // Revert to original if invalid
+        }
+    };
+
+    inputField.onkeypress = (event) => {
+        if (event.key === 'Enter') {
+            inputField.blur(); // Blur (lose focus) on Enter key to save the score
+        }
+    };
+}
+
+function updateScore(teamIndex, points) {
+    teamScores[teamIndex] += points;
+    document.getElementById(`score${teamIndex}`).innerText = teamScores[teamIndex];
 }
 
 function createGameBoard() {
@@ -125,6 +174,7 @@ function createGameBoard() {
 
 function selectQuestion(category, points, pointsDiv) {
     selectedQuestion = categories[category][points];
+    selectedPoints = points; // Store the points of the selected question
 
     // Disable the clicked question
     pointsDiv.classList.add('used'); // Add a class to indicate it has been used
