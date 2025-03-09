@@ -93,29 +93,41 @@ function displayScores() {
         const scoreDiv = document.createElement('div');
         scoreDiv.classList.add('score');
 
+        // Create a div for team name
+        const teamName = document.createElement('div');
+        teamName.innerText = name; // Team name
+        scoreDiv.appendChild(teamName);
+
         // Create score display
         const scoreValue = document.createElement('span');
         scoreValue.id = `score${index}`;
-        scoreValue.innerText = teamScores[index];
+        scoreValue.innerText = teamScores[index]; // Score value
         scoreValue.style.cursor = 'pointer'; // Indicate that it's clickable
         scoreValue.onclick = () => makeScoreEditable(scoreValue, index); // Make it editable on click
         scoreDiv.appendChild(scoreValue);
+
+        // Create a div for buttons
+        const buttonDiv = document.createElement('div');
 
         // Create increment button
         const incrementButton = document.createElement('button');
         incrementButton.innerText = '+';
         incrementButton.onclick = () => updateScore(index, selectedPoints); // Use selected points
-        scoreDiv.appendChild(incrementButton);
+        buttonDiv.appendChild(incrementButton);
 
         // Create decrement button
         const decrementButton = document.createElement('button');
         decrementButton.innerText = '-';
         decrementButton.onclick = () => updateScore(index, -selectedPoints); // Use negative selected points
-        scoreDiv.appendChild(decrementButton);
+        buttonDiv.appendChild(decrementButton);
+
+        // Append the button div to the score div
+        scoreDiv.appendChild(buttonDiv);
 
         scoreDisplay.appendChild(scoreDiv);
     });
 }
+
 
 function makeScoreEditable(scoreElement, index) {
     const currentScore = scoreElement.innerText;
