@@ -135,7 +135,7 @@ function selectQuestion(category, points, pointsDiv) {
     document.getElementById('questionArea').classList.remove('hidden');
 }
 
-document.getElementById('backButton').onclick = function() {
+    document.getElementById('backButton').onclick = function() {
     document.getElementById('gameBoard').style.display = 'grid';
     document.getElementById('questionArea').classList.add('hidden');
     document.getElementById('question').innerText = ''; // Clear the question text

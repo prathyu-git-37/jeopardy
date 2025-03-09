@@ -56,3 +56,18 @@ input {
     background: #6c757d; /* Gray background for used questions */
     cursor: not-allowed; /* Change cursor to indicate it's unclickable */
 }
+
+#scoreDisplay {
+    display: flex;
+    justify-content: space-around; /* Space out the team scores */
+    margin: 20px 0;
+}
+
+.score {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    border: 1px solid #007BFF; /* Optional: Add a border for better visibility */
+    border-radius: 5px; /* Optional: Rounded corners */
+    background-color: #f0f8ff; /* Optional: Light background color */
+}
