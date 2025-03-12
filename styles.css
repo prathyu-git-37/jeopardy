@@ -4,7 +4,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     margin: 0;
 }
 
@@ -36,10 +35,11 @@ body {
 .point {
     background: #28A745;
     color: white;
-    padding: 40px; /* Increased padding for better touch targets */
+    padding: 20px 20px;
     border-radius: 5px;
     cursor: pointer;
     text-align: center;
+    font-size: 50px;
 }
 
 .hidden {
@@ -70,4 +70,17 @@ input {
     border: 1px solid #007BFF; /* Optional: Add a border for better visibility */
     border-radius: 5px; /* Optional: Rounded corners */
     background-color: #f0f8ff; /* Optional: Light background color */
+}
+
+.categoryAndValue{
+    height: 100px;
+}
+
+.question{
+    height: 400px;
+    vertical-align: center;
+}
+
+h1{
+    font-size: xxx-large;
 }
