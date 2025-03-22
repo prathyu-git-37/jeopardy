@@ -275,21 +275,27 @@ function createGameBoard() {
             const pointsDiv = document.createElement('div');
             pointsDiv.innerText = points * currentRound;
             pointsDiv.classList.add('point');
-            pointsDiv.onclick = () => selectQuestion(category, points*currentRound, pointsDiv);
+            pointsDiv.onclick = () => selectQuestion(category, points, pointsDiv);
             gameBoard.appendChild(pointsDiv);
         });
     });
 }
 
 function selectQuestion(category, points, pointsDiv) {
-    selectedQuestion = categories[category][points];
-    selectedPoints = points; // Store the points of the selected question
+    let questions;
+    switch (currentRound) {
+        case 1: questions = categories; break;
+        case 2: questions = doublecategories; break;
+        case 3: questions = triplecategories; break;
+    }
+    selectedQuestion = questions[category][points];
+    selectedPoints = points*currentRound; // Store the points of the selected question
 
     // Disable the clicked question
     pointsDiv.classList.add('used'); // Add a class to indicate it has been used
     pointsDiv.onclick = null; // Remove the onclick event
 
-    document.getElementById('categoryAndValue').innerText = category + ' for ' + points;
+    document.getElementById('categoryAndValue').innerText = category + ' for ' + points*currentRound;
     document.getElementById('question').innerText = selectedQuestion;
     document.getElementById('gameBoard').style.display = 'none';
     document.getElementById('questionArea').classList.remove('hidden');
@@ -304,6 +310,13 @@ function checkAllQuestionsUsed() {
     if (allUsed) {
         document.getElementById('gameBoard').classList.add('hidden');
         document.getElementById('continueArea').classList.remove('hidden');
+        let buttontext = '';
+        switch (currentRound) {
+            case 1: buttontext = 'Continue to Double Jeopardy'; break;
+            case 2: buttontext = 'Continue to Triple Jeopardy'; break;
+            case 3: buttontext = 'Continue to Final Jeopardy'; break;
+        }
+        document.getElementById('continueButton').innerText = buttontext;
     }
 }
 
