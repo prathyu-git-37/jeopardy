@@ -20,19 +20,19 @@ const categories = {
         400: "‘G’ 1440: This man invented the movable type printing press",
         500: "‘O’ 1811-1840: Make sure you pass by Independence Rock when you embark on this passage to the West"
     },
-    Literature: {
-        100: "Who wrote 'Romeo and Juliet'",
-        200: "What is the title of the first Harry Potter book",
-        300: "Which novel begins with 'Call me Ishmael'",
-        400: "Who wrote 'Pride and Prejudice'",
-        500: "What is the name of the fictional detective created by Arthur Conan Doyle"
+    'Sent to Space': {
+        100: "In 1998 the US module Unity for the ISS was carried aboard Endeavor - this type of craft",
+        200: "The James Webb Space Telescope was successfully launched in 2022, designed to photograph phenomena deemed too distant for this predecessor",
+        300: "Navstar 1 launched in 1978 was the first satellite with this technology - now commonplace in many smart devices",
+        400: "In 2018 SpaceX’s Falcon Heavy rocket successfully launched this car into space",
+        500: "In 1977 these twin space probes were launched, each carrying a Golden Record containing sounds and images from Earth"
     },
-    Mathematics: {
-        100: "What is the value of Pi to two decimal places",
-        200: "What is the term for a polygon with eight sides",
-        300: "What is the square root of 64",
-        400: "What is 5 factorial (5!)",
-        500: "What is the area of a triangle with a base of 10 and height of 5"
+    Cartoons: {
+        100: "The characters of Muffy, Francine, and Buster accompany this title character on a PBS Kids show",
+        200: "While originally intended as a kids shows, this show about an Australian dog and her family has garnered a significant adult fanbase",
+        300: "This series follows the antics of five ten year olds as they operate from a high-tech treehouse to the dismay of the adults and teens in their lives",
+        400: "The memes of ‘Old Man Yells at Cloud’ and ‘I’m in danger’ originate from this long-running sitcom",
+        500: "Episodes in this satirical cartoon include ‘Make Love Not Warcraft’ and ‘Kenny Dies’"
     },
     Music: {
         100: "What is the capital of classical music",
@@ -51,33 +51,33 @@ const doublecategories = {
         400: "This airline has its largest hub at Hartsfield–Jackson Atlanta International Airport (ATL)",
         500: "When abbreviated, it is the unit of measure that we use to denote tire pressure"
     },
-    Nothing: {
-        100: "Who was the first president of the United States",
-        200: "In which year did the Titanic sink",
-        300: "What ancient civilization built the pyramids",
-        400: "Who was known as the Iron Lady",
-        500: "What year did World War II end"
+    "21st Century Pop Culture": {
+        100: "She rose to stardom playing Rachel Zane on Suits, but became internationally famous when she married Prince Harry",
+        200: "Prior to accepting the Oscar for Best Actor, Will Smith slapped Chris Rock for a joke targeting this person",
+        300: "At SuperBowl XXXVIII, Justin Timberlake accidentally exposed this fellow performer’s nipple",
+        400: "Move over Kimye - this OG couple name comes from the stars of 2005’s Mr. and Mrs. Smith",
+        500: "This reality show starred the characters of Snooki, Pauly D, and Mike ‘The Situation’ Sorrentino"
     },
-    Something: {
-        100: "What is the capital of France",
-        200: "Which river is the longest in the world",
-        300: "What country has the most natural lakes",
-        400: "Which desert is the largest in the world",
-        500: "What mountain range separates Europe from Asia"
+    "World Currencies": {
+        100: "It serves as the world’s principal reserve currency",
+        200: "This meme coin prominently features a Shiba Inu as its logo",
+        300: "Former Spanish colonies of the Phillipines and Mexico use this as their currency",
+        400: "After the Turkish ice cream vendor is done playing with your treat, you will need to pay him in this",
+        500: "Prior to the adoption of the Euro, Germany had this as its currency"
     },
-    Everything: {
-        100: "Who wrote 'Romeo and Juliet'",
-        200: "What is the title of the first Harry Potter book",
-        300: "Which novel begins with 'Call me Ishmael'",
-        400: "Who wrote 'Pride and Prejudice'",
-        500: "What is the name of the fictional detective created by Arthur Conan Doyle"
+    "\"Love\" Songs": {
+        100: "Cause you were Romeo, I was a scarlet letter And my daddy said, \"Stay away from Juliet\"",
+        200: "I snapped, \"Who's that dude?\", I don't even know his name I laid hands on her, I'll never stoop so low again I guess I don't know my own strength",
+        300: "I look and stare so deep in your eyes I touch on you more and more every time When you leave, I'm begging you not to go",
+        400: "Baby, you're like lightning in a bottle I can't let you go now that I got it",
+        500: "Like a river flows Surely to the sea Darling, so it goes Some things are meant to be"
     },
-    Everywhere: {
-        100: "What is the value of Pi to two decimal places",
-        200: "What is the term for a polygon with eight sides",
-        300: "What is the square root of 64",
-        400: "What is 5 factorial (5!)",
-        500: "What is the area of a triangle with a base of 10 and height of 5"
+    "Video Games": {
+        100: "By absorbing objects in the environment this short, round, pink creature is able to gain said object’s properties and abilities",
+        200: "If you account for all versions Tetris is the highest selling game of all time, however when only considering one official release this other block inspired game takes the cake",
+        300: "The latest Installments in this franchise include Biohazard and Village",
+        400: "Winning 2021 GoTY, this game is a co-op adventure in which you play as a husband and wife navigating multiple obstacles to salvage their marriage",
+        500: "Just one developer by the name of ConcernedApe created this quaint game where you take over the farm of your deceased grandfather"
     },
     Once: {
         100: "What is the capital of classical music",
@@ -103,33 +103,33 @@ const triplecategories = {
         400: "This special piece of attire is given to the winner of The Masters tournament",
         500: "Also known as a Quarterback Sneak, this rhyming play has been used to great effect by the Philadelphia Eagles"
     },
-    Literature: {
-        100: "Who wrote 'Romeo and Juliet'",
-        200: "What is the title of the first Harry Potter book",
-        300: "Which novel begins with 'Call me Ishmael'",
-        400: "Who wrote 'Pride and Prejudice'",
-        500: "What is the name of the fictional detective created by Arthur Conan Doyle"
+    "I Crave That Mineral": {
+        100: "This dark and shiny igneous rock is referred to as dragonglass in Game of Thrones",
+        200: "Earning a score of 1 on the Mohs hardness scale, this mineral is commonly used in chalk and baby powder",
+        300: "The Smithsonian National Museum of Natural History houses this precious stone, valued anywhere from $200-$350 million",
+        400: "When cracked open, this egg-shaped type of rock reveals a hollow cavity with crystals inside",
+        500: "This gem is the birthstone for the month of July and is also a coding language"
     },
-    Mathematics: {
-        100: "What is the value of Pi to two decimal places",
-        200: "What is the term for a polygon with eight sides",
-        300: "What is the square root of 64",
-        400: "What is 5 factorial (5!)",
-        500: "What is the area of a triangle with a base of 10 and height of 5"
+    "\"G\"eography": {
+        100: "Donald Trump sparked ire in the leaders of Denmark when he attempted to annex this territory",
+        200: "This British territory, bordering the south of Spain, historically controlled the narrow entrance to the Mediterranean",
+        300: "This most populous city in Scotland means ‘Green Glen’ in Gaelic",
+        400: "Located off the coast of Queensland, it is the world’s largest structure comprised of living organisms",
+        500: "It is one of Texas’ 2 National Parks, located less than 30 minutes from Carlsbad Caverns"
     },
-    Music: {
+    "Three Named People": {
+        100: "She starred as the lead character of Carrie Bradshaw in Sex and the City",
+        200: "He was a Marine veteran who at the age of 24 was responsible for the assassination of John F. Kennedy",
+        300: "The inventor of the first telephone, he wanted for the standard greeting upon answering a call to be Ahoy!",
+        400: "Once upon a midnight dreary this author pondered weak and weary prior to his mysterious death in Baltimore, MD",
+        500: "Prior to launching his eponymous fashion line, this French designer worked under the mentorship of Christian Dior"
+    },
+    Once: {
         100: "What is the capital of classical music",
         200: "Who composed the 'Four Seasons'",
         300: "What instrument has 88 keys",
         400: "Who is known as the Queen of Pop",
         500: "What is the term for a group of singers"
-    },
-    "I Crave That Mineral": {
-        100: "This dark and shiny igneous rock is referred to as dragonglass in Game of Thrones",
-        200: "Earning a score of 1 on the Mohs hardness scale, this mineral is commonly used in chalk and baby powder",
-        300: "The Smithsonian National Museum of Natural History houses this precious stone, valued anywhere from $200-$350 million",
-        400: "When cracked open, this egg-shaped rock reveals a hollow cavity with crystals inside",
-        500: "This gem is the birthstone for the month of July and is also a coding language"
     }
 };
 
