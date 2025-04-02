@@ -1,9 +1,9 @@
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background-color: black;
     display: flex;
     justify-content: center;
-    /*align-items: center;*/
+    align-items: center;
     margin: 0;
 }
 
@@ -18,7 +18,7 @@ body {
     grid-template-columns: repeat(6, 1fr);
     gap: 10px;
     margin: 20px auto;
-    width: 100%;
+    width: 95%;
 }
 
 .category {
@@ -35,10 +35,11 @@ body {
 }
 
 .point {
-    background: #28A745;
+    background: darkblue;
     color: white;
     padding: 20px;
     border-radius: 5px;
+    border-color: white;
     cursor: pointer;
     text-align: center;
     font-size: 50px;
@@ -66,21 +67,25 @@ input {
 }
 
 .score {
-    font-size: 18px;
+    font-size: 30px;
     font-weight: bold;
     padding: 10px;
     border: 1px solid #007BFF;
     border-radius: 5px;
-    background-color: #f0f8ff;
+    background-color: darkblue;
+    width: 15%;
+    color: white;
 }
 
 .categoryAndValue {
     height: 100px;
+    color: white;
 }
 
 .question {
     height: 400px;
     vertical-align: center;
+    color: white;
 }
 
 h1 {
