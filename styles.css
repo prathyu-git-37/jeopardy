@@ -109,3 +109,19 @@ h1 {
 #backButton{
     width: 500px;
 }
+
+#dailyDoubleScreen{
+    font-size: 180px;
+    height: 400px;
+    vertical-align: center;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding-top: 150px;
+}
+
+.revealButton{
+    width: 250px;
+    height: 75px;
+    font-size: 40px;
+}

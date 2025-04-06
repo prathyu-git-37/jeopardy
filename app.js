@@ -285,6 +285,7 @@ function createGameBoard() {
 
 function selectQuestion(category, points, pointsDiv) {
     document.getElementById('body').classList.add('background_blue');
+
     let questions;
     switch (currentRound) {
         case 1: questions = categories; break;
@@ -298,11 +299,28 @@ function selectQuestion(category, points, pointsDiv) {
     pointsDiv.classList.add('used'); // Add a class to indicate it has been used
     pointsDiv.onclick = null; // Remove the onclick event
 
-    document.getElementById('categoryAndValue').innerText = category + ' for ' + points*currentRound;
+    if(currentRound === 1 && category === 'Palindromes'){
+        document.getElementById('dailyDoubleScreen').classList.remove('hidden');
+        const revealQuestionButton = document.createElement('button');
+        const dailyDoubleScreenButton = document.getElementById('dailyDoubleScreen');
+        dailyDoubleScreenButton.appendChild(revealQuestionButton);
+        revealQuestionButton.classList.add('revealButton');
+        revealQuestionButton.innerText = 'Reveal Clue';
+        revealQuestionButton.onclick = () => {
+            dailyDoubleScreenButton.removeChild(revealQuestionButton);
+            document.getElementById('dailyDoubleScreen').classList.add('hidden');
+            document.getElementById('questionArea').classList.remove('hidden');
+            document.getElementById('backButton').classList.remove('hidden');
+        }
+    }
+    else{
+        document.getElementById('questionArea').classList.remove('hidden');
+        document.getElementById('backButton').classList.remove('hidden');
+    }
+
     document.getElementById('question').innerText = selectedQuestion.toUpperCase();
     document.getElementById('gameBoard').style.display = 'none';
-    document.getElementById('questionArea').classList.remove('hidden');
-    document.getElementById('backButton').classList.remove('hidden');
+
 }
 
 function checkAllQuestionsUsed() {
