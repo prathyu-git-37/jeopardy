@@ -7,7 +7,7 @@ const categories = {
         500: "Be careful when performing shoulder exercises or you may injure this group of “cuff” muscles"
     },
     "Movies Missing the Same Word": {
-        100: "The ___ Jedi & The ___ of the Mohicans",
+        100: "The Imitation ___ & Ender's ___",
         200: "The ___ Knight & Zero ___ Thirty",
         300: "A ___ Place & All ___ on the Western Front",
         400: "Man on ___ & Catching ___",
@@ -145,7 +145,7 @@ document.getElementById('startButton').onclick = function() {
         document.getElementById('teamNamesArea').classList.remove('hidden');
         createTeamInputs(teamCount);
     } else {
-        alert("Please enter a number between 2 and 6.");
+        alert("Please enter a number between 1 and 6.");
     }
 };
 
@@ -202,12 +202,14 @@ function displayScores() {
 
         // Create increment button
         const incrementButton = document.createElement('button');
+        incrementButton.classList.add('score_button');
         incrementButton.innerText = '+';
         incrementButton.onclick = () => updateScore(index, selectedPoints); // Use selected points
         buttonDiv.appendChild(incrementButton);
 
         // Create decrement button
         const decrementButton = document.createElement('button');
+        decrementButton.classList.add('score_button')
         decrementButton.innerText = '-';
         decrementButton.onclick = () => updateScore(index, -selectedPoints); // Use negative selected points
         buttonDiv.appendChild(decrementButton);
@@ -282,6 +284,7 @@ function createGameBoard() {
 }
 
 function selectQuestion(category, points, pointsDiv) {
+    document.getElementById('body').classList.add('background_blue');
     let questions;
     switch (currentRound) {
         case 1: questions = categories; break;
@@ -296,7 +299,7 @@ function selectQuestion(category, points, pointsDiv) {
     pointsDiv.onclick = null; // Remove the onclick event
 
     document.getElementById('categoryAndValue').innerText = category + ' for ' + points*currentRound;
-    document.getElementById('question').innerText = selectedQuestion;
+    document.getElementById('question').innerText = selectedQuestion.toUpperCase();
     document.getElementById('gameBoard').style.display = 'none';
     document.getElementById('questionArea').classList.remove('hidden');
     document.getElementById('backButton').classList.remove('hidden');
@@ -333,6 +336,7 @@ document.getElementById('continueButton').onclick = function() {
 };
 
 document.getElementById('backButton').onclick = function() {
+    document.getElementById('body').classList.remove('background_blue');
     selectedPoints = 0;
     document.getElementById('gameBoard').style.display = 'grid';
     document.getElementById('questionArea').classList.add('hidden');

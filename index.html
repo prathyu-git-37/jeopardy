@@ -6,24 +6,24 @@
     <title>Jeopardy Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body id="body">
 <div class="container">
     <div id="teamInputArea">
-        <h2>Enter Number of Teams</h2>
-        <input type="number" id="teamCount" min="2" max="6" value="3" placeholder="Number of Teams" />
+        <h2 style="color: white">Enter Number of Teams</h2>
+        <input type="number" id="teamCount" min="1" max="6" placeholder="Number of Teams" style="width: 200px;"/>
         <button id="startButton">Start Game</button>
     </div>
     <div id="teamNamesArea" class="hidden">
-        <h2>Enter Team Names</h2>
-        <div id="teamInputs"></div>
+        <h2 style="color: white">Enter Team Names</h2>
+        <div id="teamInputs" style="width: 200px; max-width: fit-content; margin-left: auto; margin-right: auto;" ></div>
         <button id="submitTeamsButton">Submit Team Names</button>
     </div>
-
+    <div id="scoreDisplay" class="hidden"></div>
     <div id="questionArea" class="hidden">
         <h2 id="categoryAndValue" class="categoryAndValue"></h2>
         <h1 id="question" class="question"></h1>
     </div>
-    <div id="scoreDisplay" class="hidden"></div>
+
     <button id="backButton" class="hidden">Back to Board</button>
     <div id="gameBoard" class="hidden"></div>
     <div id="continueArea" class="hidden">
