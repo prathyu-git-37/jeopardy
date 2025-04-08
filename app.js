@@ -20,7 +20,7 @@ const categories = {
         400: "‘G’ 1440: This man invented the movable type printing press",
         500: "‘O’ 1811-1840: Make sure you pass by Independence Rock when you embark on this passage to the West"
     },
-    'Sent to Space': {
+    "Sent to Space": {
         100: "In 1998 the US module Unity for the ISS was carried aboard Endeavor - this type of craft",
         200: "The James Webb Space Telescope was successfully launched in 2022, designed to photograph phenomena deemed too distant for this predecessor",
         300: "Navstar 1 launched in 1978 was the first satellite with this technology - now commonplace in many smart devices",
@@ -34,17 +34,17 @@ const categories = {
         400: "The memes of ‘Old Man Yells at Cloud’ and ‘I’m in danger’ originate from this long-running sitcom",
         500: "Episodes in this satirical cartoon include ‘Make Love Not Warcraft’ and ‘Kenny Dies’"
     },
-    Music: {
-        100: "What is the capital of classical music",
-        200: "Who composed the 'Four Seasons'",
-        300: "What instrument has 88 keys",
-        400: "Who is known as the Queen of Pop",
-        500: "What is the term for a group of singers"
+    "Famous Duos": {
+        100: "These two lovebirds were in it through the best of times and especially the worst of times - committing a series of crimes including bank robberies, kidnappings, and murder between 1932 to 1934",
+        200: "These are the droids you are looking for - these robotic pals were first introduced in Star Wars: Episode IV – A New Hope",
+        300: "While fans have longed for them to be a gay couple, in truth these two characters on Sesame Street are no more than friendly roommates",
+        400: "This American folk rock duo had hits such as ‘The Sound of Silence’ and ‘Mrs. Robinson’",
+        500: "Don’t let the name fool you - this iconic partnership consists of one magician who never speaks"
     }
 };
 
 const doublecategories = {
-    'Also a Greek Letter': {
+    "Also a Greek Letter": {
         100: "This luxury watch is sported by Daniel Craig playing James Bond in the movie Casino Royale",
         200: "These types of rays have the shortest wavelength on the electromagnetic spectrum",
         300: "The video game series Half Life uses this letter as its logo",
@@ -79,12 +79,12 @@ const doublecategories = {
         400: "Winning 2021 GoTY, this game is a co-op adventure in which you play as a husband and wife navigating multiple obstacles to salvage their marriage",
         500: "Just one developer by the name of ConcernedApe created this quaint game where you take over the farm of your deceased grandfather"
     },
-    Once: {
-        100: "What is the capital of classical music",
-        200: "Who composed the 'Four Seasons'",
-        300: "What instrument has 88 keys",
-        400: "Who is known as the Queen of Pop",
-        500: "What is the term for a group of singers"
+    "Rhyme Time": {
+        100: "A zit located in a cheek depression",
+        200: "Donkey Kong successfully breaks out of prison",
+        300: "A stretchy recyclable material",
+        400: "A homeless double-reeded woodwind instrument",
+        500: "A faith based on worshipping urban birds"
     }
 };
 
@@ -121,15 +121,15 @@ const triplecategories = {
         100: "She starred as the lead character of Carrie Bradshaw in Sex and the City",
         200: "He was a Marine veteran who at the age of 24 was responsible for the assassination of John F. Kennedy",
         300: "The inventor of the first telephone, he wanted for the standard greeting upon answering a call to be Ahoy!",
-        400: "Once upon a midnight dreary this author pondered weak and weary prior to his mysterious death in Baltimore, MD",
+        400: "In 2019, Greta Gerwig directed an ensemble cast including Florence Pugh and Saorise Ronan when her novel ‘Little Women’ was adapted for the big screen",
         500: "Prior to launching his eponymous fashion line, this French designer worked under the mentorship of Christian Dior"
     },
-    Once: {
-        100: "What is the capital of classical music",
-        200: "Who composed the 'Four Seasons'",
-        300: "What instrument has 88 keys",
-        400: "Who is known as the Queen of Pop",
-        500: "What is the term for a group of singers"
+    "Common Bond": {
+        100: "Two Pair\n Full House\n Royal Flush",
+        200: "Tall\n Grande\n Venti",
+        300: "Bowline\n Figure 8\n Monkey’s Fist",
+        400: "Sky\n Prussian\n Baby",
+        500: "Brooklyn\n Tower\n Sydney Harbor"
     }
 };
 
@@ -299,7 +299,13 @@ function selectQuestion(category, points, pointsDiv) {
     pointsDiv.classList.add('used'); // Add a class to indicate it has been used
     pointsDiv.onclick = null; // Remove the onclick event
 
-    if(currentRound === 1 && category === 'Palindromes'){
+    if((currentRound === 1 && category === "Sent to Space" && points === 300) ||
+        (currentRound === 2 && category === "Also a Greek Letter" && points === 500) ||
+        (currentRound === 2 && category === "Rhyme Time" && points === 200) ||
+        (currentRound === 3 && category === "I Crave That Mineral" && points === 300) ||
+        (currentRound === 3 && category === "Three Named People" && points === 400) ||
+        (currentRound === 3 && category === "Common Bond" && points === 500)
+    ) {
         document.getElementById('dailyDoubleScreen').classList.remove('hidden');
         const revealQuestionButton = document.createElement('button');
         const dailyDoubleScreenButton = document.getElementById('dailyDoubleScreen');
@@ -314,6 +320,7 @@ function selectQuestion(category, points, pointsDiv) {
         }
     }
     else{
+        document.getElementById('categoryAndValue').innerText = category + ' for ' + points*currentRound;
         document.getElementById('questionArea').classList.remove('hidden');
         document.getElementById('backButton').classList.remove('hidden');
     }
@@ -354,6 +361,7 @@ document.getElementById('continueButton').onclick = function() {
 };
 
 document.getElementById('backButton').onclick = function() {
+    document.getElementById('categoryAndValue').innerText = '';
     document.getElementById('body').classList.remove('background_blue');
     selectedPoints = 0;
     document.getElementById('gameBoard').style.display = 'grid';
