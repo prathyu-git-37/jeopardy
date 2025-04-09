@@ -29,7 +29,7 @@ const categories = {
     },
     Cartoons: {
         100: "The characters of Muffy, Francine, and Buster accompany this title character on a PBS Kids show",
-        200: "While originally intended as a kids shows, this show about an Australian dog and her family has garnered a significant adult fanbase",
+        200: "While originally intended as a kids shows, this show about an Australian dog and her family has garnered a significant adult fan base",
         300: "This series follows the antics of five ten year olds as they operate from a high-tech treehouse to the dismay of the adults and teens in their lives",
         400: "The memes of ‘Old Man Yells at Cloud’ and ‘I’m in danger’ originate from this long-running sitcom",
         500: "Episodes in this satirical cartoon include ‘Make Love Not Warcraft’ and ‘Kenny Dies’"
@@ -61,7 +61,7 @@ const doublecategories = {
     "World Currencies": {
         100: "It serves as the world’s principal reserve currency",
         200: "This meme coin prominently features a Shiba Inu as its logo",
-        300: "Former Spanish colonies of the Phillipines and Mexico use this as their currency",
+        300: "Former Spanish colonies of the Philippines and Mexico use this as their currency",
         400: "After the Turkish ice cream vendor is done playing with your treat, you will need to pay him in this",
         500: "Prior to the adoption of the Euro, Germany had this as its currency"
     },
@@ -356,7 +356,11 @@ document.getElementById('continueButton').onclick = function() {
         createGameBoard(); // Create the next round's game board
     }
     else{
-        //Display final jeopardy category
+        document.getElementById('continueArea').classList.add('hidden');
+        document.getElementById('gameBoard').style.display = 'none';
+        document.getElementById('dailyDoubleScreen').innerText = 'COMMUNICATIONS';
+        document.getElementById('dailyDoubleScreen').classList.remove('hidden');
+        // make background blue and add the actual question
     }
 };
 
