@@ -356,11 +356,24 @@ document.getElementById('continueButton').onclick = function() {
         createGameBoard(); // Create the next round's game board
     }
     else{
+        document.getElementById('body').classList.add('background_blue');
         document.getElementById('continueArea').classList.add('hidden');
         document.getElementById('gameBoard').style.display = 'none';
         document.getElementById('dailyDoubleScreen').innerText = 'COMMUNICATIONS';
+        document.getElementById('dailyDoubleScreen').style.fontSize = '130px';
         document.getElementById('dailyDoubleScreen').classList.remove('hidden');
-        // make background blue and add the actual question
+
+        const revealQuestionButton = document.createElement('button');
+        const dailyDoubleScreenButton = document.getElementById('dailyDoubleScreen');
+        dailyDoubleScreenButton.appendChild(revealQuestionButton);
+        revealQuestionButton.classList.add('revealButton');
+        revealQuestionButton.innerText = 'Reveal Clue';
+        revealQuestionButton.onclick = () => {
+            document.getElementById('question').innerText = "Originally meant to just be a codename, this technology denoted by a rune-like logo is named after a 10th century Norse king".toUpperCase();
+            dailyDoubleScreenButton.removeChild(revealQuestionButton);
+            document.getElementById('dailyDoubleScreen').classList.add('hidden');
+            document.getElementById('questionArea').classList.remove('hidden');
+        }
     }
 };
 
