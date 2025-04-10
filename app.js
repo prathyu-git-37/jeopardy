@@ -182,6 +182,17 @@ function displayScores() {
     scoreDisplay.innerHTML = ''; // Clear previous content
     teamNames.forEach((name, index) => {
         const scoreDiv = document.createElement('div');
+        switch (name){
+            case "Hufflepuff": scoreDiv.style.backgroundColor = "#ffff00"; scoreDiv.style.color = "#000000";
+            break;
+            case "Gryffindor" : scoreDiv.style.backgroundColor = "#f00000";
+            break;
+            case "Slytherin" : scoreDiv.style.backgroundColor = "#008000";
+            break;
+            case "Ravenclaw" : scoreDiv.style.backgroundColor = "#0000ff";
+            break;
+            default: scoreDiv.style.backgroundColor = "#007BFF";
+        }
         scoreDiv.classList.add('score');
 
         // Create a div for team name
