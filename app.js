@@ -23,7 +23,7 @@ const categories = {
     "Sent to Space": {
         100: "In 1998 the US module Unity for the ISS was carried aboard Endeavor - this type of craft",
         200: "The James Webb Space Telescope was successfully launched in 2022, designed to photograph phenomena deemed too distant for this predecessor",
-        300: "Navstar 1 launched in 1978 was the first satellite with this technology - now commonplace in many smart devices",
+        300: "Navstar 1 - launched in 1978 - was the first satellite with this technology - now commonplace in many smart devices",
         400: "In 2018 SpaceX’s Falcon Heavy rocket successfully launched this car into space",
         500: "In 1977 these twin space probes were launched, each carrying a Golden Record containing sounds and images from Earth"
     },
@@ -49,7 +49,7 @@ const doublecategories = {
         200: "These types of rays have the shortest wavelength on the electromagnetic spectrum",
         300: "The video game series Half Life uses this letter as its logo",
         400: "This airline has its largest hub at Hartsfield–Jackson Atlanta International Airport (ATL)",
-        500: "When abbreviated, it is the unit of measure that we use to denote tire pressure"
+        500: "This abbreviation is the unit of measure that we use to denote tire pressure in the USA"
     },
     "21st Century Pop Culture": {
         100: "She rose to stardom playing Rachel Zane on Suits, but became internationally famous when she married Prince Harry",
@@ -61,7 +61,7 @@ const doublecategories = {
     "World Currencies": {
         100: "It serves as the world’s principal reserve currency",
         200: "This meme coin prominently features a Shiba Inu as its logo",
-        300: "Former Spanish colonies of the Philippines and Mexico use this as their currency",
+        300: "Former Spanish colonies, the Philippines and Mexico use this as their currency",
         400: "After the Turkish ice cream vendor is done playing with your treat, you will need to pay him in this",
         500: "Prior to the adoption of the Euro, Germany had this as its currency"
     },
@@ -99,7 +99,7 @@ const triplecategories = {
     "Sports Ball": {
         100: "Analysts say that the trade of this Slovenian athlete was one of the most shocking moves in franchise history",
         200: "This 17-year-old soccer phenom has been compared to Lionel Messi for his contributions to F.C. Barcelona",
-        300: "Between this tennis power couple, they have spent a combined 478 ranked No. 1 in their respective organizations",
+        300: "Between this tennis power couple, they have spent a combined 478 weeks ranked No. 1 in their respective organizations",
         400: "This special piece of attire is given to the winner of The Masters tournament",
         500: "Also known as a Quarterback Sneak, this rhyming play has been used to great effect by the Philadelphia Eagles"
     },
