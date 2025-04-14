@@ -145,7 +145,7 @@ document.getElementById('startButton').onclick = function() {
         document.getElementById('teamNamesArea').classList.remove('hidden');
         createTeamInputs(teamCount);
     } else {
-        alert("Please enter a number between 1 and 6.");
+        alert("Please enter a number between 2 and 6.");
     }
 };
 
